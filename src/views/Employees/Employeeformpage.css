@@ -1,0 +1,89 @@
+/* EmployeeFormPage.css */
+/* Shared wrapper styling for AddEmployeeView and EditEmployeeView */
+
+.emp-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: #f7f7f9;
+
+  padding: 40px 24px;
+}
+
+.emp-page-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.emp-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  border: none;
+  background: none;
+  padding: 0;
+
+  color: var(--text);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  margin-bottom: 18px;
+}
+
+.emp-back-link:hover {
+  color: var(--text-h);
+}
+
+.emp-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  padding: 36px 40px;
+  box-sizing: border-box;
+}
+
+.emp-card-header {
+  margin-bottom: 28px;
+}
+
+.emp-card-header h1 {
+  font-size: 24px;
+  margin: 0 0 6px;
+  letter-spacing: -0.4px;
+}
+
+.emp-card-header p {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.emp-not-found {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  padding: 40px;
+  text-align: center;
+
+  color: var(--text);
+  font-size: 15px;
+}
+
+@media (max-width: 560px) {
+  .emp-page {
+    padding: 24px 16px;
+  }
+
+  .emp-card {
+    padding: 26px 22px;
+    border-radius: 12px;
+  }
+}

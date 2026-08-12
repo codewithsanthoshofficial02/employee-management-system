@@ -1,0 +1,141 @@
+
+/* EmployeeForm.css */
+
+.emp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.emp-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+
+.emp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.emp-field-full {
+  grid-column: 1 / -1;
+  max-width: 220px;
+}
+
+.emp-field label {
+  color: #374151;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.emp-field input,
+.emp-field select {
+  height: 44px;
+  padding: 0 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--bg);
+  color: var(--text-h);
+
+  font-size: 14.5px;
+  font-family: inherit;
+
+  outline: none;
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emp-field input::placeholder {
+  color: #9ca3af;
+}
+
+.emp-field input:focus,
+.emp-field select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.emp-field select {
+  cursor: pointer;
+}
+
+/* Actions */
+
+.emp-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+
+.emp-btn-primary {
+  height: 42px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--accent);
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.emp-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.emp-btn-secondary {
+  height: 42px;
+  padding: 0 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--bg);
+  color: var(--text-h);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.emp-btn-secondary:hover {
+  background: #f4f3ec;
+  border-color: #d1d0d4;
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+  .emp-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emp-field-full {
+    max-width: none;
+  }
+
+  .emp-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .emp-btn-primary,
+  .emp-btn-secondary {
+    width: 100%;
+  }
+}
