@@ -1,38 +1,8 @@
-// AddEmployeeView.jsx
-// Form screen to create a new employee record.
-
-// import { useNavigate } from "react-router-dom";
-// import { useEmployees } from "../../context/EmployeeContext";
-// import EmployeeForm from "../../components/EmployeeForm";
-
-// function AddEmployeeView() {
-//   const { addEmployee } = useEmployees();
-//   const navigate = useNavigate();
-
-//   function handleAdd(formData) {
-//     addEmployee(formData);
-//     //navigate("/employees", { replace: true });
-//     navigate(-1);
-//   }
-
-//   return (
-//     <div style={{ padding: 20 }}>
-//       <h2>Add Employee</h2>
-//       <EmployeeForm 
-//      // initialData={existingEmployee}
-//       onSubmit={handleAdd} 
-//       submitLabel="Add Employee" />
-//     </div>
-//   );
-// }
-
-// export default AddEmployeeView;
-
-
+// AddEmployeeView
 import { useNavigate } from "react-router-dom";
 import { useEmployees } from "../../context/EmployeeContext";
 import EmployeeForm from "../../components/EmployeeForm";
-import "./EmployeeFormPage.css";
+import "./EmployeeFormpage.css";
 
 function AddEmployeeView() {
   const { addEmployee } = useEmployees();
