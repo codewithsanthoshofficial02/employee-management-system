@@ -1,65 +1,14 @@
 // EmployeeListView.jsx
 // Displays all employees in a searchable table with edit/delete actions.
 
-// import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { useEmployees } from "../../context/EmployeeContext";
-// import EmployeeTable from "../../components/EmployeeTable";
-// import SearchBar from "../../components/SearchBar";
-
-
-// function EmployeeListView() {
-//   //const { employees, addEmployee } = useEmployees();
-//   const { employees, deleteEmployee } = useEmployees();
-//   const [searchTerm, setSearchTerm] = useState("");
-//   const navigate = useNavigate();
-
-//   const filteredEmployees = employees.filter((emp) =>
-//     emp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-//     emp.department.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-
-//   function handleEdit(id) {
-//     navigate(`/employees/edit/${id}`);
-//   }
-
-//   function handleDelete(id) {
-//     if (window.confirm("Are you sure you want to delete this employee?")) {
-//       deleteEmployee(id);
-//     }
-//   }
-
-// return (
-//     <div style={{ padding: 20 }}>
-//       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-//         <h2>Employee List</h2>
-//         <button onClick={() => navigate("/employees/add")}>+ Add Employee</button>
-//       </div>
-
-//       <SearchBar value={searchTerm} onChange={setSearchTerm} />
-
-//       <EmployeeTable
-//         employees={filteredEmployees}
-//         onEdit={handleEdit}
-//         onDelete={handleDelete}
-//       />
-//     </div>
-//   );
-
-// }
-
-// export default EmployeeListView;
-
-// EmployeeListView.jsx
-// Displays all employees in a searchable table with edit/delete actions.
-
 import { useState } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useEmployees } from "../../context/EmployeeContext";
 import EmployeeTable from "../../components/EmployeeTable";
 import SearchBar from "../../components/SearchBar";
-import "../dashboard/DashboardView.css"; // reuses .dash-shell / .dash-sidebar / .dash-nav / .dash-main etc.
+//import "../dashboard/DashboardView.css"; // reuses .dash-shell / .dash-sidebar / .dash-nav / .dash-main etc.
+import "../Dashboard/DashboardView.css"
 import "./EmployeeListView.css";
 
 function EmployeeListView() {
