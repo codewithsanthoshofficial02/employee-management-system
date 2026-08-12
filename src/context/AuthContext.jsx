@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
 
   function login(username, password) {
     // Mock check for now — replace with real API call later
-    if (username === "hr" && password === "hr123") {
+    if (username === "test" && password === "password") {
       localStorage.setItem("isLoggedIn", "true");
       setIsLoggedIn(true);
       return true;
