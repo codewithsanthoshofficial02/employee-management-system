@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEmployees } from "../../context/EmployeeContext";
 import EmployeeForm from "../../components/EmployeeForm";
-import "./EmployeeFormpage.css";
+import "./Employeeformpage.css";
 
 function AddEmployeeView() {
   const { addEmployee } = useEmployees();
