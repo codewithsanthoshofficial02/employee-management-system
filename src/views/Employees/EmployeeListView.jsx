@@ -9,7 +9,7 @@ import EmployeeTable from "../../components/EmployeeTable";
 import SearchBar from "../../components/SearchBar";
 //import "../dashboard/DashboardView.css"; // reuses .dash-shell / .dash-sidebar / .dash-nav / .dash-main etc.
 import "../Dashboard/DashboardView.css"
-import "./EmployeeListView.css";
+import "./Employeelistview.css";
 
 function EmployeeListView() {
   const { logout } = useAuth();
