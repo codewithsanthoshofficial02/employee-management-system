@@ -76,13 +76,13 @@ function LoginView() {
     setError("");
 
     if (!username.trim()) {
-      setError("Please enter your username.");
-      return;
+      //setError("Please enter your username.");
+      //return;
     }
 
     if (!password) {
-      setError("Please enter your password.");
-      return;
+      //setError("Please enter your password.");
+      //return;
     }
 
     setIsLoading(true);
