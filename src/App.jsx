@@ -1,7 +1,7 @@
 // App.jsx
 // Defines all application routes and wires up route guards.
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginView from "./views/Login/LoginView";
 import DashboardView from "./views/Dashboard/DashboardView";
 import EmployeeListView from "./views/Employees/EmployeeListView";
@@ -16,26 +16,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={ <PublicRoute> <LoginView /></PublicRoute>} />
-        <Route
-          path="/dashboard"
-          element={ <ProtectedRoute> <DashboardView /> </ProtectedRoute> } 
-         />
-
-        <Route
-          path="/employees"
-          element={ <ProtectedRoute> <EmployeeListView /> </ProtectedRoute> } 
-         />
-
-        <Route
-          path="/employees/add"
-          element={ <ProtectedRoute> <AddEmployeeView /> </ProtectedRoute> } 
-         />
-        
-        <Route
-          path="/employees/edit/:id"
-          element={ <ProtectedRoute> <EditEmployeeView /> </ProtectedRoute> } 
-         />
-        
+        <Route path="/dashboard" element={ <ProtectedRoute> <DashboardView /> </ProtectedRoute> } />
+        <Route path="/employees" element={ <ProtectedRoute> <EmployeeListView /> </ProtectedRoute> } />
+        <Route path="/employees/add" element={ <ProtectedRoute> <AddEmployeeView /> </ProtectedRoute> } />
+        <Route path="/employees/edit/:id" element={ <ProtectedRoute> <EditEmployeeView /> </ProtectedRoute> } />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,53 +1,5 @@
 // EmployeeForm.jsx
 // Shared form UI for both Add and Edit screens; parent decides submit behavior.
-
-// import { useState } from "react";
-
-// function EmployeeForm({ initialData, onSubmit, submitLabel }) {
-//   const [formData, setFormData] = useState(
-//     initialData || {
-//       name: "",
-//       email: "",
-//       phone: "",
-//       department: "",
-//       designation: "",
-//       salary: "",
-//       status: "Active",
-//     }
-//   );
-
-//   function handleChange(e) {
-//     const { name, value } = e.target;
-//     setFormData((prev) => ({ ...prev, [name]: value }));
-//   }
-
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     onSubmit(formData);
-//   }
-
-//   return (
-//     <form onSubmit={handleSubmit} style={{ maxWidth: 400 }}>
-//       <input name="name" placeholder="Name" value={formData.name} onChange={handleChange} required /><br /><br />
-//       <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} required /><br /><br />
-//       <input name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} /><br /><br />
-//       <input name="department" placeholder="Department" value={formData.department} onChange={handleChange} required /><br /><br />
-//       <input name="designation" placeholder="Designation" value={formData.designation} onChange={handleChange} /><br /><br />
-//       <input name="salary" type="number" placeholder="Salary" value={formData.salary} onChange={handleChange} /><br /><br />
-//       <select name="status" value={formData.status} onChange={handleChange}>
-//         <option value="Active">Active</option>
-//         <option value="Inactive">Inactive</option>
-//       </select><br /><br />
-//       <button type="submit">{submitLabel}</button>
-//     </form>
-//   );
-// }
-
-// export default EmployeeForm;
-
-
-// EmployeeForm.jsx
-// Shared form UI for both Add and Edit screens; parent decides submit behavior.
 import { useState } from "react";
 import "./EmployeeForm.css";
 
@@ -69,10 +21,18 @@ function EmployeeForm({ initialData, onSubmit, submitLabel, onCancel }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   }
 
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   onSubmit(formData);
+  // }
+
   function handleSubmit(e) {
-    e.preventDefault();
-    onSubmit(formData);
-  }
+  e.preventDefault();
+  onSubmit({
+    ...formData,
+    salary: formData.salary === "" ? "" : Number(formData.salary),
+  });
+}
 
   return (
     <form onSubmit={handleSubmit} className="emp-form">

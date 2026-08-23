@@ -8,11 +8,11 @@ import App from './App.jsx'
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { EmployeeProvider } from "./context/EmployeeContext.jsx";
 
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    window.location.reload();
-  }
-});
+// window.addEventListener("pageshow", (event) => {
+//   if (event.persisted) {
+//     window.location.reload();
+//   }
+// });
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

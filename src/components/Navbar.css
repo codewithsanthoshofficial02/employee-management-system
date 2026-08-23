@@ -1,0 +1,238 @@
+/* Navbar.css */
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  height: 64px;
+  padding: 0 28px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.navbar-brand-mark {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+  background: #4f5bf5;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.navbar-search {
+  flex: 1;
+  max-width: 440px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  height: 38px;
+  padding: 0 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f4f5f7;
+  color: #9ca3af;
+}
+
+.navbar-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+
+  color: #111827;
+  font-size: 13.5px;
+  font-family: inherit;
+}
+
+.navbar-search input::placeholder {
+  color: #9ca3af;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: auto;
+}
+
+.navbar-icon-btn {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #6b7280;
+
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.navbar-icon-btn:hover {
+  background: #f4f5f7;
+}
+
+/* Account menu */
+
+.navbar-account {
+  position: relative;
+}
+
+.navbar-account-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  height: 36px;
+  padding: 0 6px;
+
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #111827;
+
+  font-size: 13.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.navbar-account-btn:hover {
+  background: #f4f5f7;
+}
+
+.navbar-avatar {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #e5e9ff;
+  color: #4f5bf5;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.navbar-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  min-width: 140px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+
+  padding: 6px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.navbar-menu-item {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  text-align: left;
+
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.navbar-menu-item:hover {
+  background: #fef2f2;
+}
+
+/* Tabs */
+
+.navbar-tabs {
+  display: flex;
+  gap: 26px;
+
+  padding: 0 28px;
+}
+
+.navbar-tab {
+  padding: 12px 2px 10px;
+
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.navbar-tab:hover {
+  color: #374151;
+}
+
+.navbar-tab.active {
+  color: #4f5bf5;
+  border-bottom-color: #4f5bf5;
+}
+
+/* Mobile */
+
+@media (max-width: 720px) {
+  .navbar-search {
+    display: none;
+  }
+
+  .navbar-account-name {
+    display: none;
+  }
+
+  .navbar-top {
+    padding: 0 16px;
+  }
+
+  .navbar-tabs {
+    padding: 0 16px;
+    overflow-x: auto;
+    gap: 20px;
+  }
+}

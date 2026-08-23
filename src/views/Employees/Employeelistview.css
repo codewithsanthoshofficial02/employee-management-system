@@ -1,60 +1,95 @@
 /* EmployeeListView.css */
-/* List-specific styles only — sidebar/shell styles come from DashboardView.css */
+
+.emp-add-btn {
+  height: 38px;
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4f5bf5;
+  color: #ffffff;
+
+  font-size: 13.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.emp-add-btn:hover {
+  background: #3f4bdb;
+}
 
 .emp-list-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  box-shadow: var(--shadow);
 
-  padding: 20px 22px;
+  padding: 18px 20px;
 }
 
 .emp-list-toolbar {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 
   margin-bottom: 16px;
 }
 
-.emp-list-count {
-  color: var(--text);
-  font-size: 13px;
-  white-space: nowrap;
-}
+/* Search — takes up most of the row width */
 
-/* Search bar */
+.emp-search-wrap {
+  flex: 1;
 
-.search-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   height: 42px;
-  width: 100%;
-  max-width: 320px;
-
   padding: 0 14px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
-
-  background: var(--bg);
-  color: var(--text-h);
-
-  font-size: 14px;
-  font-family: inherit;
-
-  outline: none;
-  box-sizing: border-box;
-
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.search-input::placeholder {
+  background: #ffffff;
   color: #9ca3af;
 }
 
-.search-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-bg);
+.emp-search-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+
+  color: #111827;
+  font-size: 13.5px;
+  font-family: inherit;
+}
+
+.emp-search-wrap input::placeholder {
+  color: #9ca3af;
+}
+
+/* Department filter — fixed compact width on the right */
+
+.emp-dept-select {
+  flex-shrink: 0;
+  width: 180px;
+
+  height: 42px;
+  padding: 0 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+
+  color: #111827;
+  font-size: 13.5px;
+  font-family: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+  outline: none;
 }
 
 /* Table */
@@ -66,26 +101,26 @@
 .emp-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .emp-table thead th {
   text-align: left;
-  color: var(--text);
-  font-size: 11.5px;
-  font-weight: 600;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 
   padding: 0 12px 10px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e5e7eb;
   white-space: nowrap;
 }
 
 .emp-table tbody td {
-  padding: 13px 12px;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-h);
+  padding: 12px;
+  border-bottom: 1px solid #f0f1f3;
+  color: #111827;
   vertical-align: middle;
 }
 
@@ -93,13 +128,51 @@
   border-bottom: none;
 }
 
-.emp-table tbody tr:hover {
-  background: #fafafa;
-}
+/* Name cell */
 
 .emp-name-cell {
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.emp-avatar {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #e5e9ff;
+  color: #4f5bf5;
+
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.emp-name-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.emp-name-text {
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.emp-email-text {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* Status pill */
 
 .emp-status-pill {
   display: inline-block;
@@ -111,14 +184,16 @@
 }
 
 .emp-status-pill.is-active {
-  background: rgba(22, 163, 74, 0.12);
+  background: #dcfce7;
   color: #16a34a;
 }
 
 .emp-status-pill.is-inactive {
-  background: rgba(220, 38, 38, 0.12);
+  background: #fee2e2;
   color: #dc2626;
 }
+
+/* Actions */
 
 .emp-actions-cell {
   display: flex;
@@ -128,7 +203,7 @@
 
 .emp-btn-edit,
 .emp-btn-delete {
-  height: 32px;
+  height: 30px;
   padding: 0 12px;
 
   border-radius: 6px;
@@ -140,13 +215,13 @@
 }
 
 .emp-btn-edit {
-  border: 1px solid var(--accent-border);
-  background: var(--accent-bg);
-  color: var(--accent);
+  border: 1px solid #c7d2fe;
+  background: #eef1ff;
+  color: #4f5bf5;
 }
 
 .emp-btn-edit:hover {
-  background: rgba(37, 99, 235, 0.18);
+  background: #e0e5ff;
 }
 
 .emp-btn-delete {
@@ -162,7 +237,7 @@
 .emp-table-empty {
   padding: 40px 0;
   text-align: center;
-  color: var(--text);
+  color: #6b7280;
   font-size: 14px;
 }
 
@@ -172,9 +247,5 @@
   .emp-list-toolbar {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .search-input {
-    max-width: none;
   }
 }

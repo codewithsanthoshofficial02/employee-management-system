@@ -1,0 +1,13 @@
+File casing mismatch — Employeeformpage.css should be EmployeeFormPage.css, Employeelistview.css should be EmployeeListView.css (and their imports updated to match). Safe on Windows/Mac, breaks on case-sensitive filesystems (Linux servers, some CI).
+Salary saved as a string, not a number — fine for display, would break sort/sum/filter logic if you ever add it. Fix: coerce Number(formData.salary) in EmployeeForm.jsx's handleSubmit.
+
+Decided, but worth knowing the tradeoff:
+3. Login accepts any non-empty username/password — not a real auth check. Fine for a prototype, not fine if this ever needs to gate real access.
+4. Add/Edit employee forms are full-page (no navbar) — intentionally different from Dashboard/Employees list. Revisit if you want full navigation consistency across every screen.
+5. No pagination on the employee table — fine while your dataset is small; will get unwieldy with 50+ employees.
+
+Never actually touched (lower priority, flagged early on):
+6. employees array has no loading state — brief flash of "0 employees" possible on first paint if data source ever becomes async (not visible now with localStorage, would matter if you swap in a real API).
+7. No success feedback (toast/confirmation) after Add/Edit — user only knows it worked because the page navigates back.
+8. window.confirm() native browser dialog for delete — functional, but visually inconsistent with the rest of the custom-styled UI.
+9. IDs generated via Date.now() — works, but two employees added within the same millisecond (unlikely, but possible with fast scripted actions) would collide.
